@@ -34,6 +34,18 @@
 #ifndef clipper_hpp
 #define clipper_hpp
 
+
+#ifdef _output_type_static
+#define CLIPPER_CLASS_DECL
+#else
+#  pragma warning(disable : 4251) // warning C4251: class X needs to have dll-interface to be used by clients of class Y
+#ifdef _clipper_project
+#define CLIPPER_CLASS_DECL __declspec(dllexport)
+#else
+#define CLIPPER_CLASS_DECL __declspec(dllimport)
+#endif
+#endif
+
 #include <vector>
 #include <stdexcept>
 #include <cstring>
@@ -177,7 +189,7 @@ typedef std::vector < HorzJoinRec* > HorzJoinList;
 //ClipperBase is the ancestor to the Clipper class. It should not be
 //instantiated directly. This class simply abstracts the conversion of sets of
 //polygon coordinates into edge objects that are stored in a LocalMinima list.
-class ClipperBase
+class CLIPPER_CLASS_DECL ClipperBase
 {
 public:
   ClipperBase();
@@ -198,7 +210,7 @@ protected:
   EdgeList          m_edges;
 };
 
-class Clipper : public virtual ClipperBase
+class CLIPPER_CLASS_DECL Clipper : public virtual ClipperBase
 {
 public:
   Clipper();
