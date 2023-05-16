@@ -36,7 +36,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectName>polyclipping</ProjectName>
-    <ProjectGuid>{424F72D6-053A-41C5-BE03-3B0BD535F1EB}</ProjectGuid>
+    <ProjectGuid>{927FC43B-3E6F-4851-AF50-5A20ABC97F73}</ProjectGuid>
     <RootNamespace>polyclipping</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
