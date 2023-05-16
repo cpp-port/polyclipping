@@ -87,7 +87,7 @@ typedef std::vector< ExPolygon > ExPolygons;
 
 enum JoinType { jtSquare, jtRound, jtMiter };
 
-bool Orientation(const Polygon &poly);
+POLYCLIPPING_CLASS_DECL bool Orientation(const Polygon &poly);
 double Area(const Polygon &poly);
 void OffsetPolygons(const Polygons &in_polys, Polygons &out_polys,
   double delta, JoinType jointype = jtSquare, double MiterLimit = 2);
