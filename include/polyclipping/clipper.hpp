@@ -34,7 +34,7 @@
 #ifndef clipper_hpp
 #define clipper_hpp
 
-
+#ifdef WINDOWS
 #ifdef _output_type_static
 #define POLYCLIPPING_CLASS_DECL
 #else
@@ -45,6 +45,10 @@
 #define POLYCLIPPING_CLASS_DECL __declspec(dllimport)
 #endif
 #endif
+#else
+#define POLYCLIPPING_CLASS_DECL
+#endif
+
 
 #include <vector>
 #include <stdexcept>
