@@ -34,7 +34,7 @@
 #ifndef clipper_hpp
 #define clipper_hpp
 
-#ifdef WINDOWS
+#ifdef WIN32
 #ifdef _output_type_static
 #define POLYCLIPPING_CLASS_DECL
 #else
